@@ -103,6 +103,10 @@ Se realiza la ejecución de la función:
 curl -X POST -H "Content-Type: application/json" -d "{'problem':{}}" http://localhost:8080/invoke/01HWFXC2WWNG9000GZJ0000002
 ```
 
+```sh
+curl -X POST -H "Content-Type: application/json" --data @data.json http://localhost:8080/invoke/01HWFXC2WWNG9000GZJ0000002
+```
+
 # References
 
 - [Fn Project Introduccion](https://fnproject.io/tutorials/JavaFDKIntroduction/)

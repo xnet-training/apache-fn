@@ -5,6 +5,9 @@ import org.junit.*;
 
 import static org.junit.Assert.*;
 
+import com.crossnetcorp.fn.Input;
+import com.crossnetcorp.fn.Output;
+
 public class OptaFunctionTest {
 
     @Rule
@@ -12,11 +15,14 @@ public class OptaFunctionTest {
 
     @Test
     public void shouldReturnGreeting() {
-        testing.givenEvent().enqueue();
+	testing.addSharedClass(Input.class);
+	 testing.addSharedClass(Output.class);
+        testing.givenEvent().withBody("{}").enqueue();
         testing.thenRun(OptaFunction.class, "handleRequest");
 
         FnResult result = testing.getOnlyResult();
-        assertEquals("{ 'result': {{'problem': {}}}", result.getBodyAsString());
+	System.out.println(result.getBodyAsString());
+        assertEquals("{\"solution\":\"Demo\"}", result.getBodyAsString());
     }
 
 }

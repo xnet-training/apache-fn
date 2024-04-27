@@ -3,6 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <!--parent>
+      <groupId>ai.timefold.solver</groupId>
+      <artifactId>timefold-solver-build-parent</artifactId>
+      <version>1.9.0</version>
+      <relativePath/>
+    </parent-->
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <fdk.version>1.0.187</fdk.version>
@@ -38,7 +45,38 @@
     </dependencies>
 
     <build>
-        <plugins>
+	    <plugins>
+		    <!--plugin>
+  <groupId>au.com.acegi</groupId>
+  <artifactId>xml-format-maven-plugin</artifactId>
+  <version>3.3.1</version>
+  <executions>
+    <execution>
+      <id>xml-format</id>
+        <goals>
+		<goal>xml-format</goal>
+			<goal>xml-check</goal>
+	</goals>
+	<phase></phase>
+      <configuration> 
+        <indentSize>2</indentSize>
+      </configuration>
+    </execution>
+  </executions>
+</plugin-->
+	<plugin>
+    <groupId>com.github.xml-analyzer</groupId>
+    <artifactId>xml-analyzer-maven-plugin</artifactId>
+    <version>2.6.1</version>
+    <executions>
+        <execution>
+            <phase>pre-compile</phase>
+            <goals>
+                <goal>format</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

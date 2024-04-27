@@ -76,3 +76,23 @@ be8e6912969a: Mounted from fnproject/fn-java-fdk
 0.0.5: digest: sha256:45a094b3f0b329e52d42750a1cd3b58acfb7f00dafa71a101f8522872b94a5c4 size: 2207
 Updating function optafn using image xnet/optafn:0.0.5...
 ```
+
+Se realiza la ejecución de la función de dos formas distintas como se indica a continuación:
+
+## Ejecución local
+
+```sh
+fn invoke optimizacion optafn
+```
+
+Enviar parametros a la función
+
+```sh
+echo -n "{'problem':{}}" | fn invoke optimizacion optafn
+```
+
+## Ejecucion remota
+
+```sh
+
+```

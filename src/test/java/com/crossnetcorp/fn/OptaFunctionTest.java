@@ -16,7 +16,7 @@ public class OptaFunctionTest {
         testing.thenRun(OptaFunction.class, "handleRequest");
 
         FnResult result = testing.getOnlyResult();
-        assertEquals("Hello, world!", result.getBodyAsString());
+        assertEquals("{ 'result': {{'problem': {}}}", result.getBodyAsString());
     }
 
 }

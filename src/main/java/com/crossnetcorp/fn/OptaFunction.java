@@ -2,11 +2,17 @@ package com.crossnetcorp.fn;
 
 public class OptaFunction {
 
-    public String handleRequest(String input) {
-        String name = (input == null || input.isEmpty()) ? "world"  : input;
+    public static class Input {
+	    public String fleet;
+	    public String params;
+	    public String visits;
+    }
 
-        System.out.println("Inside Java Hello World function"); 
-        return "Hello, " + name + "!";
+    public String handleRequest(String input) {
+        String problem = (input == null || input.isEmpty()) ? "{'problem': {}}"  : input;
+
+        System.out.println("Optimizando problema"); 
+        return "{ 'result': {" + problem + "}";
     }
 
 }

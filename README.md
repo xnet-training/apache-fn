@@ -94,5 +94,15 @@ echo -n "{'problem':{}}" | fn invoke optimizacion optafn
 ## Ejecucion remota
 
 ```sh
-
+fn inspect function optimizacion optafn
 ```
+
+Se realiza la ejecución de la función:
+
+```sh
+curl -X POST -H "Content-Type: application/json" -d "{'problem':{}}" http://localhost:8080/invoke/01HWFXC2WWNG9000GZJ0000002
+```
+
+# References
+
+- [Fn Project Introduccion](https://fnproject.io/tutorials/JavaFDKIntroduction/)

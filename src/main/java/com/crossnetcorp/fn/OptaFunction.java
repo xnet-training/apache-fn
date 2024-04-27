@@ -1,6 +1,6 @@
-package com.example.fn;
+package com.crossnetcorp.fn;
 
-public class HelloFunction {
+public class OptaFunction {
 
     public String handleRequest(String input) {
         String name = (input == null || input.isEmpty()) ? "world"  : input;

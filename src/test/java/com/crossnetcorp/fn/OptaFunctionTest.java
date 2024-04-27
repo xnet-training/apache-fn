@@ -1,11 +1,11 @@
-package com.example.fn;
+package com.crossnetcorp.fn;
 
 import com.fnproject.fn.testing.*;
 import org.junit.*;
 
 import static org.junit.Assert.*;
 
-public class HelloFunctionTest {
+public class OptaFunctionTest {
 
     @Rule
     public final FnTestingRule testing = FnTestingRule.createDefault();
@@ -13,7 +13,7 @@ public class HelloFunctionTest {
     @Test
     public void shouldReturnGreeting() {
         testing.givenEvent().enqueue();
-        testing.thenRun(HelloFunction.class, "handleRequest");
+        testing.thenRun(OptaFunction.class, "handleRequest");
 
         FnResult result = testing.getOnlyResult();
         assertEquals("Hello, world!", result.getBodyAsString());

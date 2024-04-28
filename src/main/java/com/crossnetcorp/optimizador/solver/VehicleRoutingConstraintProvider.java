@@ -5,7 +5,12 @@ import ai.timefold.solver.core.api.score.stream.Constraint;
 import ai.timefold.solver.core.api.score.stream.ConstraintFactory;
 import ai.timefold.solver.core.api.score.stream.ConstraintProvider;
 
-import com.crossnetcorp.optimizador.domain.*;
+import com.crossnetcorp.optimizador.domain.Vehicle;
+import com.crossnetcorp.optimizador.domain.Visit;
+import com.crossnetcorp.optimizador.solver.justifications.MinimizeTravelTimeJustification;
+import com.crossnetcorp.optimizador.solver.justifications.ServiceFinishedAfterMaxEndTimeJustification;
+import com.crossnetcorp.optimizador.solver.justifications.VehicleCapacityJustification;
+
 
 public class VehicleRoutingConstraintProvider implements ConstraintProvider {
 

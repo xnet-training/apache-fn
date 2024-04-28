@@ -1,4 +1,4 @@
-package com.crossnetcorp.optimization.domain;
+package com.crossnetcorp.optimizador.domain;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

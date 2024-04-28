@@ -1,4 +1,4 @@
-package com.crossnetcorp.optimization.domain;
+package com.crossnetcorp.optimizador.domain;
 
 
 import java.time.Duration;
@@ -11,7 +11,8 @@ import ai.timefold.solver.core.api.domain.variable.NextElementShadowVariable;
 import ai.timefold.solver.core.api.domain.variable.PreviousElementShadowVariable;
 import ai.timefold.solver.core.api.domain.variable.ShadowVariable;
 
-import com.crossnetcorp.optimization.vehiclerouting.solver.ArrivalTimeUpdatingVariableListener;
+import com.crossnetcorp.optimizador.solver.ArrivalTimeUpdatingVariableListener;
+
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;

@@ -1,4 +1,4 @@
-package com.crossnetcorp.optimization.solver.justifications;
+package com.crossnetcorp.optimizador.solver.justifications;
 
 import ai.timefold.solver.core.api.score.stream.ConstraintJustification;
 

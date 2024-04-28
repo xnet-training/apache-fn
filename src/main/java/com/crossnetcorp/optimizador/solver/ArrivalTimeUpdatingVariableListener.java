@@ -7,7 +7,9 @@ import java.util.Objects;
 import ai.timefold.solver.core.api.domain.variable.VariableListener;
 import ai.timefold.solver.core.api.score.director.ScoreDirector;
 
-import com.crossnetcorp.optimizador.domain.*;
+import com.crossnetcorp.optimizador.domain.VehicleRoutePlan;
+import com.crossnetcorp.optimizador.domain.Visit;
+import com.crossnetcorp.optimizador.domain.Vehicle;
 
 public class ArrivalTimeUpdatingVariableListener implements VariableListener<VehicleRoutePlan, Visit> {
 

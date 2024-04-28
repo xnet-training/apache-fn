@@ -16,13 +16,15 @@ public class OptaFunctionTest {
     @Test
     public void shouldReturnGreeting() {
 	testing.addSharedClass(Input.class);
-	 testing.addSharedClass(Output.class);
-        testing.givenEvent().withBody("{}").enqueue();
+	testing.addSharedClass(Output.class);
+	testing.addSharedClass(InputVehicle.class);
+	testing.addSharedClass(InputVisit.class);
+        testing.givenEvent().withBody("{\"fleet\": [{\"id\": \"plate1\"}], \"visits\": [{\"id\":\"01\"}], \"params\": null}").enqueue();
         testing.thenRun(OptaFunction.class, "handleRequest");
 
         FnResult result = testing.getOnlyResult();
 	System.out.println(result.getBodyAsString());
-        assertEquals("{\"solution\":\"Demo\"}", result.getBodyAsString());
+        assertEquals("{\"solution\":\"Demo\",\"routes\":[]}", result.getBodyAsString());
     }
 
 }

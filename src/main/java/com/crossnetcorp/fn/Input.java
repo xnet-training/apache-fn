@@ -1,20 +1,24 @@
 package com.crossnetcorp.fn;
 
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Input {
-    public String fleet;
+    public List<InputVehicle> fleet;
+    public List<InputVisit> visits;
     public String params;
-    public String visits;
     
     public Input() {
     }
 
     @JsonCreator
-    public Input(@JsonProperty("fleet") String fleet, @JsonProperty("params") String params,@JsonProperty("visits") String visits) {
+    public Input(@JsonProperty("fleet") List<InputVehicle> fleet, 
+		    @JsonProperty("visits") List<InputVisit> visits,
+		    @JsonProperty("params") String params) {
 	    this.fleet = fleet;
 	    this.params = params;
 	    this.visits = visits;
     }
+
 }

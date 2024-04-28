@@ -17,20 +17,20 @@ import ai.timefold.solver.core.api.solver.SolutionManager;
 import ai.timefold.solver.core.api.solver.SolverManager;
 import ai.timefold.solver.core.api.solver.SolverStatus;
 import ai.timefold.solver.core.api.solver.SolverFactory;
+import ai.timefold.solver.core.api.solver.Solver;
 import ai.timefold.solver.core.config.solver.SolverConfig;
 
 import com.crossnetcorp.optimizador.domain.*;
 import com.crossnetcorp.optimizador.solver.*;
 
-public class Solver {
+public class VRMSolver {
 	//private final SolverManager<VehicleRoutePlan, String> solverManager;
 	//private final SolutionManager<VehicleRoutePlan, HardSoftLongScore> solutionManager;
 
 	private final SolverFactory<VehicleRoutePlan> solverFactory;
-
 	private final ConcurrentMap<String, Job> jobIdToJob = new ConcurrentHashMap<>();
 
-	public Solver() {	
+	public VRMSolver() {	
 		this.solverFactory = SolverFactory.create(
 				new SolverConfig()
 				.withSolutionClass(VehicleRoutePlan.class)
@@ -45,8 +45,11 @@ public class Solver {
 	}
 
 	public VehicleRoutePlan solve(VehicleRoutePlan problem) {
-		String jobId = UUID.randomUUID().toString();
-		jobIdToJob.put(jobId, Job.ofRoutePlan(problem));
+		//String jobId = UUID.randomUUID().toString();
+		//jobIdToJob.put(jobId, Job.ofRoutePlan(problem));
+		Solver<VehicleRoutePlan> solver = this.solverFactory.buildSolver();
+
+		return solver.solve(problem);
 
 		//solverManager.solveBuilder()
 		//	.withProblemId(jobId)
@@ -57,7 +60,7 @@ public class Solver {
 		//		//LOGGER.error("Failed solving jobId ({}).", jobId, exception);
 		//	})
 		//        .run();
-		return jobIdToJob.get(jobId).routePlan;
+		//return jobIdToJob.get(jobId).routePlan;
 	}
 
 	private record Job(VehicleRoutePlan routePlan, Throwable exception) {
